@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".views.HomeFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentPadding="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/greetingTextViewHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/good_morning_b_shree_b" />
+
+            <TextView
+                android:id="@+id/todayTextViewHome"
+                android:layout_width="wrap_content"
+                android:textColor="@color/purple_700"
+                android:layout_marginTop="12dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:text="Today" />
+
+            <TextView
+                android:id="@+id/dateTextViewHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+                android:textSize="20sp"
+                android:text="15 Jan 2021" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/taskCompletedTextViewHome"
+                android:layout_width="wrap_content"
+                android:textColor="@color/green"
+                android:textSize="16dp"
+                android:text="Completed"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/taskHowManyTextViewHome"
+                android:layout_width="wrap_content"
+                android:textSize="16dp"
+                android:textColor="@color/green"
+                android:text="7/10"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
