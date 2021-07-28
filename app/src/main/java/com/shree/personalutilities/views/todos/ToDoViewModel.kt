@@ -11,16 +11,19 @@ import kotlinx.coroutines.launch
 
 class ToDoViewModel(application: Application) : AndroidViewModel(application) {
     private val taskRepository: TaskRepository
+    private val TAG = "ToDoViewModel"
 
     /**
      * An array of task items.
      */
-     var taskList: MediatorLiveData<List<Task>> = MediatorLiveData()
+    var taskList: MediatorLiveData<List<Task>> = MediatorLiveData()
 
     init {
         val taskDao = AppDatabase.getInstance(application).taskDao()
         taskRepository = TaskRepository(taskDao)
-        viewModelScope.launch { getAllTasks()}
+        viewModelScope.launch {
+            getAllTasks()
+        }
 
     }
 

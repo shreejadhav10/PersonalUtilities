@@ -18,13 +18,16 @@ class MyTodoRecyclerViewAdapter : RecyclerView.Adapter<MyTodoRecyclerViewAdapter
     private val values: MutableList<Task> = mutableListOf()
 
     fun setTaskList(tasks: List<Task>) {
-        values.addAll(tasks)
+        with(values) {
+            clear()
+            addAll(tasks)
+        }
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.fragment_item_todo_list, parent, false)
+            .inflate(R.layout.fragment_item_todo_list, parent, false)
         return ViewHolder(view)
     }
 

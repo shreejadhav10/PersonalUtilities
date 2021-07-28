@@ -28,6 +28,8 @@ class TodoFragment private constructor() : BaseFragment() {
         ViewModelProvider(this).get(ToDoViewModel::class.java)
     }
 
+    private val TAG = "TodoFragment"
+
     override fun getActivityTitle(): String {
         return getString(R.string.todo_title)
     }

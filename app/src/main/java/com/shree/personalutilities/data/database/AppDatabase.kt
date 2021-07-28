@@ -20,33 +20,34 @@ abstract class AppDatabase : RoomDatabase() {
         private var INSTANCE: AppDatabase? = null
 
         fun getInstance(context: Context): AppDatabase {
-            return INSTANCE ?: synchronized(this) {
-                INSTANCE ?: Room.databaseBuilder(
-                        context.applicationContext,
-                        AppDatabase::class.java,
-                        "personal_utilities_database"
+            INSTANCE = INSTANCE ?: synchronized(this) {
+                Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "personal_utilities_database"
                 )
-                        .fallbackToDestructiveMigration()
-                        .addCallback(object : Callback() {
-                            override fun onCreate(db: SupportSQLiteDatabase) {
-                                super.onCreate(db)
-                                Log.d(TAG, "onCreate")
-                            }
+                    .fallbackToDestructiveMigration()
+                    .addCallback(object : Callback() {
+                        override fun onCreate(db: SupportSQLiteDatabase) {
+                            super.onCreate(db)
+                            Log.d(TAG, "onCreate")
+                        }
 
-                            override fun onOpen(db: SupportSQLiteDatabase) {
-                                super.onOpen(db)
-                                Log.d(TAG, "onOpen")
+                        override fun onOpen(db: SupportSQLiteDatabase) {
+                            super.onOpen(db)
+                            Log.d(TAG, "onOpen")
 
-                            }
+                        }
 
-                            override fun onDestructiveMigration(db: SupportSQLiteDatabase) {
-                                super.onDestructiveMigration(db)
-                                Log.d(TAG, "onDestructiveMigration")
+                        override fun onDestructiveMigration(db: SupportSQLiteDatabase) {
+                            super.onDestructiveMigration(db)
+                            Log.d(TAG, "onDestructiveMigration")
 
-                            }
-                        })
-                        .build()
+                        }
+                    })
+                    .build()
             }
+            return INSTANCE!!
         }
     }
 
