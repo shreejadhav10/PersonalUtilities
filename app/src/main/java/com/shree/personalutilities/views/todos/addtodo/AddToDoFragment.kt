@@ -22,7 +22,6 @@ class AddToDoFragment private constructor() : BaseFragment() {
 
     companion object {
         fun newInstance() = AddToDoFragment()
-        private const val TAG = "AddToDoFragment"
     }
 
     private val viewModel: AddToDoViewModel by lazy {
@@ -34,7 +33,7 @@ class AddToDoFragment private constructor() : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        initErrorListener();
+        initErrorListener()
     }
 
     private fun initErrorListener() {
@@ -48,14 +47,10 @@ class AddToDoFragment private constructor() : BaseFragment() {
                                 showSnackBar(it)
                                 lifecycleScope.launch {
                                     withContext(Dispatchers.IO) {
-                                        delay(2000)
+                                        delay(200)
                                         this@AddToDoFragment.activity?.finish()
                                     }
                                 }
-                                Handler(Looper.getMainLooper()).postDelayed(
-                                    { },
-                                    2000
-                                )
                             }
                         }
                         else -> messageMap[key.key]?.let {

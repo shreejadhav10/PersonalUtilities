@@ -12,15 +12,11 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 
-abstract class AddToDoActivity : BaseActivity() {
+class AddToDoActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportFragmentManager.beginTransaction()
             .add(R.id.mainContainer, AddToDoFragment.newInstance()).commit()
-
-        var result=listOf<Int>(1,2,3,4).sum();
-
-
     }
 
     companion object {

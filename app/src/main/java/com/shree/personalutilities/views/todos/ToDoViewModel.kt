@@ -24,7 +24,7 @@ class ToDoViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
-    final fun getAllTasks() {
+    private fun getAllTasks() {
         viewModelScope.launch {
             taskList.addSource(taskRepository.getAllTasks()) {
                 taskList.value = it;

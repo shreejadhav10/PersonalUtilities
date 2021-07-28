@@ -2,13 +2,12 @@ package com.shree.personalutilities.views.todos
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,8 +15,6 @@ import com.shree.personalutilities.R
 import com.shree.personalutilities.databinding.FragmentTodoListBinding
 import com.shree.personalutilities.views.base.BaseFragment
 import com.shree.personalutilities.views.todos.addtodo.AddToDoActivity
-import com.shree.personalutilities.views.todos.addtodo.AddToDoViewModel
-import com.shree.personalutilities.views.todos.dummy.DummyContent
 
 
 /**
